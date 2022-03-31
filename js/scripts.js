@@ -13,7 +13,6 @@ var map = new mapboxgl.Map({
   // maxZoom:14,
 
 });
-
 var popup = new mapboxgl.Popup({
   offset:20,
 })
@@ -225,7 +224,6 @@ map.addLayer({
 'source': 'major-ports',
 'paint': {
   'circle-color': 'gold',
-
 }
 });
 })
@@ -236,7 +234,6 @@ type: 'geojson',
 //Use a URL for the value for the data property.
 data: '/data/navigable-waterway-lines.geojson'
 });
-
 map.addLayer({
 'id': 'navigable-waterway-lines',
 'type': 'line',
