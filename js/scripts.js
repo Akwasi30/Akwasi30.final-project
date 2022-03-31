@@ -228,19 +228,21 @@ map.addLayer({
 });
 })
 
+
 map.on ('load', function () {
 map.addSource('navigable-waterway-lines', {
 type: 'geojson',
 //Use a URL for the value for the data property.
 data: '/data/navigable-waterway-lines.geojson'
 });
+
 map.addLayer({
 'id': 'navigable-waterway-lines',
 'type': 'line',
 'source': 'navigable-waterway-lines',
 'paint': {
   'line-color': 'darkblue',
-
+  
 }
 });
 })
