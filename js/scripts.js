@@ -196,7 +196,7 @@ subText: 'Boston, MA'
 ]
 
 pointsOfInterest.forEach(function(pointOfInterest) {
-var popup = new mapboxgl.Popup({offset:70 })
+var popup = new mapboxgl.Popup({offset:20 })
  .setHTML(`
    <h3>${pointOfInterest.popupHtml}</h3>
    <p>${pointOfInterest.subText}</p>
@@ -242,7 +242,7 @@ map.addLayer({
 'source': 'navigable-waterway-lines',
 'paint': {
   'line-color': 'darkblue',
-  
+
 }
 });
 })

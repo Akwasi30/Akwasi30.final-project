@@ -1,1 +1,3 @@
-# Akwasi30.finalproject.github.io
+# This map shows marine water ways connecting major port in the US. Data were retrieved from the US Department of Transportation. The data that were retrieved are : major-ports.geojson and navigable-waterway-lines.geojson. This map information will be a very great tool for Marine Engineers who use the US waters. In addition, a popup marker has been designed with various port names.
+A boot strap was designed to highlight some major ports in the US. Example of these ports are Massachusetts Port Authority, The Port Authority of New York and New Jersey, The Port of Maimi, the Port of Alaska, Seattle Port and the Port of Philadelphia.
+Furthermore, some relevant information such as National Transportation Statistics will also enable this map readers or users to get some useful information.
