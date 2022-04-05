@@ -215,7 +215,7 @@ map.on ('load', function () {
 map.addSource('major-ports', {
 type: 'geojson',
 //Use a URL for the value for the data property.
-data: '/data/major-ports.geojson'
+data: 'data/major-ports.geojson'
 });
 
 map.addLayer({
@@ -233,7 +233,7 @@ map.on ('load', function () {
 map.addSource('navigable-waterway-lines', {
 type: 'geojson',
 //Use a URL for the value for the data property.
-data: '/data/navigable-waterway-lines.geojson'
+data: 'data/navigable-waterway-lines.geojson'
 });
 
 map.addLayer({
