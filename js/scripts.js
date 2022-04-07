@@ -203,8 +203,8 @@ var popup = new mapboxgl.Popup({offset:20 })
   `);
 new mapboxgl.Marker({
 color:'crimson'
-})
 
+})
   .setLngLat(pointOfInterest.lnglat)
   .setPopup(popup)
   .addTo(map);
