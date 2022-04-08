@@ -65,17 +65,17 @@ subText: 'Nikiski is located on the Kenai Peninsula, 9 miles north of the City o
 {
 lnglat: [-149.895000000379611,61.237780000086417],
 popupHtml: 'Anchorage Port',
-subText: 'Alaska'
+subText: 'Port of Alaska is a Municipality of Anchorage-owned and -operated facility that serves Anchorage, the State of Alaska and the nation. It opened with the “Port of Anchorage” name in 1961 to support regional economic development. Anchorage Assembly renamed Port of Alaska in October 2017 to reflect its regional, state and national significance.'
 },
 {
 lnglat: [-164.53890000013152, 67.719179999985016],
 popupHtml: 'Kivilina, AK',
-subText: 'Alaska'
+subText: 'Kivalina is located between the Chukchi Sea and Kivalina River at the tip of an 8-mile barrier reef. Erosion and wind-driven ice have resulted in plans to relocate the village to a new site 2.5 miles away. Subsistence, including whaling, is an important part of the local economy.'
 },
 {
 lnglat: [-117.178400000264745, 32.708209999763774],
-popupHtml: 'San Diego',
-subText: 'California'
+popupHtml: 'San Diego Port',
+subText: 'The Port of San Diego manages San Diego Bay and 34 miles of its beautiful, natural waterfront for the people of California.The Port was established in 1962 under the Port Act and is charged with implementing the Tidelands Trust Doctrine. For over fifty years,the Ports five member cities Chula Vista, Coronado, Imperial Beach, National City and San Diego have worked together to develop and promote commerce, navigation, recreation and fisheries on and around San Diego Bay.',
 },
 {
 lnglat: [-122.21401199961349, 37.505360000269583],
