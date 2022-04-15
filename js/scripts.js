@@ -11,8 +11,10 @@ var map = new mapboxgl.Map({
   zoom: 3
   //minZoom: 9,
   // maxZoom:9,
-
 });
+  // disable map zoom when using scroll
+map.scrollZoom.disable();
+
 var popup = new mapboxgl.Popup({
   offset:20,
 })
