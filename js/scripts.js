@@ -6,11 +6,11 @@ var nys = [-75.000000,43.000000]
 
 var map = new mapboxgl.Map({
   container:'mapContainer', // HTML container id
-  style:'mapbox://styles/mapbox/light-v9', // style URL
+  style:'mapbox://styles/mapbox/dark-v9', // style URL
   center: nys, //starting position as [lng, lat]
-  zoom:2
+  zoom: 3
   //minZoom: 9,
-  // maxZoom:14,
+  // maxZoom:9,
 
 });
 var popup = new mapboxgl.Popup({
@@ -20,7 +20,7 @@ var popup = new mapboxgl.Popup({
 
 // add a marker for the New York
 var marker = new mapboxgl.Marker({
-  color:'crimson'
+  color:'gold'
 })
 .setLngLat (nys)
 .setPopup(popup)
@@ -28,51 +28,19 @@ var marker = new mapboxgl.Marker({
 
 var popup = new mapboxgl.Popup({
   offset:20,
-})
+});
+
+var img = document.createElement("img");
 
 var pointsOfInterest= [
-{
-lnglat: [-168.938199999710662,53.759610000020977],
-popupHtml: 'Unalaska Island Port',
-subText: 'Unalaska, home to the Port of Dutch Harbor, sits in the heart of the North Pacific and Bering Sea fisheries. The city of Unalaska is on the northern end of Unalaska Island, the second largest island in the Aleutian Chain, 800 miles southwest of Anchorage. World War II history, cultural opportunities, and beautiful scenery draw people to Unalaska/Dutch Harbor. The island provides many outdoor activities including hiking, sportfishing, kayaking, and birding. Dutch Harbor is the main delivery port for the crab fleet featured on the Discovery Channel’s hit reality show “The Deadliest Catch.'
 
-},
-{
-lnglat: [-156.472800000020328,20.898610000380238 ],
-popupHtml: 'Kahului Port',
-subText: 'Kahului Harbor is primarily a commercial harbor and port for Hawaii. Many cruiseships such as Carnival and Norwegian Cruise Lines Harbor is conveniently located in Kahului.This is the island largest town and location of Maui Airport. Kahului Harbor has lots of shopping and restaurants nearby within walking distance for cruisepassengers.'
-},
-{
-lnglat: [-155.833299999681657,20.037780000067926 ],
-popupHtml: 'Kawaihae Harbor, HI',
-subText: 'Kawaihae is a port community on the north west side of the island ofHawaiʻi which includes a fuel depot, shipping terminal and militarylanding site. Outside of the man-made breakwall is a popular surf spot,the Pua Kailima o Kawaihae Cultural Surf Park.'
-},
-{
-lnglat: [-159.35309999973407,21.961109999827457 ],
-popupHtml: 'Nawiliwili Port, HI',
-subText: 'Nawiliwili Harbor is located about 1.5 miles southeast of the small city of Lihue, along Kauai southeast coast, and has been the main harbor on the island since 1930. However, the Nawiliwili Bay area has a long history of being an integral part of life on the island'
-},
-{
-lnglat: [-158.10890000013822,21.297229999983575 ],
-popupHtml: 'Barbers Point Port, Oahu, HI',
-subText: 'Kalaeloa Harbor occupies the location of theformer Naval Air Station Barbers Point,which was closed in 1999 and subsequentlytransferred to the State of Hawaii'
-},
-{
-lnglat: [-151.314400000092377,60.747929999989488],
-popupHtml: 'Nikiski Port',
-subText: 'Nikiski is located on the Kenai Peninsula, 9 miles north of the City of Kenai, off of the Sterling Highway. It is also known as Port Nikiski and Nikishka. It lies at approximately 60° 44 N Latitude, 151° 19 W Longitude (Sec. 02, T006N, R012W, Seward Meridian). The community is located in the Kenai Recording District. The area encompasses 28 sq. miles of land and 90 sq. miles of water.'
-},
 {
 lnglat: [-149.895000000379611,61.237780000086417],
 popupHtml: 'Anchorage Port',
 subText: 'Port of Alaska is a Municipality of Anchorage-owned and -operated facility that serves Anchorage, the State of Alaska and the nation. It opened with the “Port of Anchorage” name in 1961 to support regional economic development. Anchorage Assembly renamed Port of Alaska in October 2017 to reflect its regional, state and national significance.'
 },
 {
-lnglat: [-164.53890000013152, 67.719179999985016],
-popupHtml: 'Kivilina, AK',
-subText: 'Kivalina is located between the Chukchi Sea and Kivalina River at the tip of an 8-mile barrier reef. Erosion and wind-driven ice have resulted in plans to relocate the village to a new site 2.5 miles away. Subsistence, including whaling, is an important part of the local economy.'
-},
-{
+
 lnglat: [-117.178400000264745, 32.708209999763774],
 popupHtml: 'San Diego Port',
 subText: 'The Port of San Diego manages San Diego Bay and 34 miles of its beautiful, natural waterfront for the people of California.The Port was established in 1962 under the Port Act and is charged with implementing the Tidelands Trust Doctrine. For over fifty years,the Ports five member cities Chula Vista, Coronado, Imperial Beach, National City and San Diego have worked together to develop and promote commerce, navigation, recreation and fisheries on and around San Diego Bay.',
@@ -80,117 +48,52 @@ subText: 'The Port of San Diego manages San Diego Bay and 34 miles of its beauti
 {
 lnglat: [-122.21401199961349, 37.505360000269583],
 popupHtml: 'Redwood City Port',
-subText: 'California'
+subText: 'While in use since 1851, the Port of Redwood City was founded by City Charter in 1937. The Port of Redwood City is located 18 nautical miles south of San Francisco and is the only deep-water port in the South San Francisco Bay. The Port of Redwood City serves the Silicon Valley region and is a leading west-coast foreign trade agency. The Port’s strategic location fuels the construction industry by moving construction cargo used in the region. The Port of Redwood City specializes in bulk, neo-bulk and liquid cargoes',
 },
 {
 lnglat: [-155.0758000003635, 19.728609999822265],
 popupHtml: 'Honolulu Port',
-subText: 'Hawaii'
-},
-{
-lnglat: [-122.374233000202878, 37.924237000220607],
-popupHtml: 'Richmond Port CA',
-subText: 'Hawaii'
+subText: 'Honolulu Harbor, also called Kulolia and Ke Awa O Kou, is the principal seaport of Honolulu and the State of Hawaiʻi in the United States.',
 },
 {
 lnglat: [-122.308100000064826, 37.821520000055834],
 popupHtml: 'Oakland Port CA"',
-subText: 'California'
-},
-{
-lnglat: [-119.20847499961657, 34.148244000358737],
-popupHtml: 'Port Hueneme, CA',
-subText: 'California'
+subText: 'Port history spans a period of 165 years, which encompassed the Civil War, the Industrial Revolution, two World Wars, and America’s coming of age as a global power. We begin with Captain Thomas Gray, grandfather of the famous dancer Isadora Duncan, who initiated ferry service to San Francisco.',
 },
 {
 lnglat: [-118.241000000112649, 33.777280000002655],
 popupHtml: 'Port of Los Angeles',
-subText: 'California'
-},
-{
-lnglat: [-124.209500000115767, 43.363510000279902],
-popupHtml: 'Coos Bay',
-subText: 'Oregon'
-},
-{
-lnglat: [-122.862799999678302, 46.020479999842856],
-popupHtml: 'Kalama Port',
-subText: 'Washington'
+subText: 'The Port of Los Angeles is America’s Port®, the nation’s premier gateway for international commerce and the busiest seaport in the Western Hemisphere. Located in San Pedro Bay, 25 miles south of downtown Los Angeles, the Port encompasses 7,500 acres of land and water along 43 miles of waterfront',
 },
 {
 lnglat: [-122.359217999792023, 47.587711000257926],
 popupHtml: 'Seattle Port',
-subText: 'Washington'
-},
-{
-lnglat: [-97.398138000242639, 25.952201000183674],
-popupHtml: 'Brownsville Port',
-subText: 'Texas'
-},
-{
-lnglat: [-92.440674000296426, 31.312083000112647],
-popupHtml: 'Lake Charles Port',
-subText: 'Louisiana'
-},
-{
-lnglat: [-90.617939999681852, 30.033450000329701],
-popupHtml: 'South Louisiana Port',
-subText: 'Louisiana'
-},
-{
-lnglat: [-91.430732000033572, 31.547237999901483],
-popupHtml: 'Natchez Port',
-subText: 'Mississippi'
-},
-{
-lnglat: [-84.199260000265483, 30.190090000216639],
-popupHtml: 'Panama City Port',
-subText: 'Florida'
+subText: 'Founded in 1911 by a vote of the people as a special purpose government, the Port of Seattles mission is to promote economic opportunities and quality of life in the region by advancing trade, travel, commerce and job creation in an equitable, accountable and environmentally responsible manner.',
 },
 {
 lnglat: [-80.181641999923116, 25.782862000181144],
 popupHtml: 'Miami Port ',
-subText: 'Florida'
+subText: 'PortMiami is one of America’s fastest-growing global gateways. It contributes more than $43 billion annually to Miami-Dade County’s local economy and supports over 334,500 jobs in Florida. Located at the crossroads of north-south and east-west trade lanes and with big-ship capabilities, PortMiami serves ocean carrier customers by linking worldwide markets with U.S. consumers and producers.',
 },
 {
 lnglat: [-82.522350000320714, 27.785340000128098],
 popupHtml: 'Tampa Port ',
-subText: 'Florida'
-},
-{
-lnglat: [-80.052669999622992, 26.769039999836934],
-popupHtml: 'Palm Beach Port ',
-subText: 'Florida'
-},
-{
-lnglat: [-80.052669999622992, 26.769039999836934],
-popupHtml: 'Palm Beach Port ',
-subText: 'Florida'
-},
-{
-lnglat: [-80.052669999622992, 26.769039999836934],
-popupHtml: 'Brunswick Port',
-subText: 'Georgia'
-},
-{
-lnglat: [-79.921595000123617, 32.788780999960537],
-popupHtml: 'Charleston, SC',
-subText: 'South Carolina'
+subText: 'Port Tampa Bay will be recognized as a leader in the maritime industry. Port Tampa Bay will have a customer driven, strategic business focus in working with stakeholders to develop and manage marine terminals and supporting infrastructure for the benefit of the regional economy. Port Tampa Bay will employ sound financial, business and environmental management practices in fulfilling its mission.',
 },
 {
 lnglat: [-74.038356999904764, 40.673949000227203],
 popupHtml: 'Port of New York and New Jersey',
-subText: 'NYNJ'
+subText: 'In the early 1900s, the Hudson and East Rivers were bustling with maritime activity. There was very little harmony and cooperation between New York and New Jersey. The two states frequently fought over jurisdiction rights on the mighty Hudson River.  After years of political negotiation, a compact between the two states was signed in 1921 and created The Port of New York Authority. The agency was given a broad mandate to develop and modernize the entire port district.',
 },
 {
 lnglat: [-75.202191000372792, 39.918819999993325],
 popupHtml: 'Port of Philadelphia',
-subText: 'Philadelphia, PA'
+subText: 'Philadelphia has been a major center of international commerce for over 300 years. Even today, with major port complexes serving major metropolitan centers throughout the country, Philadelphia and its international seaport maintains a preeminent position in several areas of trade, such as the importation of perishable cargoes from South America, high-quality paper products from Scandinavia, and premium meat from Australia and New Zealand.',
 },
 {
 lnglat: [-71.052290000035896, 42.350939000244608],
 popupHtml: 'Port of Massachusetts',
-subText: 'Boston, MA'
+subText: 'At the Massachusetts Port Authority, our history is long, our responsibilities serious and our mission unwavering: to connect Massachusetts and New England to the world, safely, securely and efficiently, never forgetting our commitment to our neighbors who live and work around our ports and facilities.',
 
 },
 ]
@@ -200,9 +103,10 @@ var popup = new mapboxgl.Popup({offset:20 })
  .setHTML(`
    <h3>${pointOfInterest.popupHtml}</h3>
    <p>${pointOfInterest.subText}</p>
+   <P>${pointsOfInterest.img}</p>
   `);
 new mapboxgl.Marker({
-color:'crimson'
+color:'Cyan'
 
 })
   .setLngLat(pointOfInterest.lnglat)
@@ -223,26 +127,554 @@ map.addLayer({
 'type': 'circle',
 'source': 'major-ports',
 'paint': {
-  'circle-color': 'gold',
+  'circle-color': 'DarkSlateGrey',
+}
+});
+})
+map.on ('load', function () {
+map.addSource('-7162369445271272240navigable-waterways-fixed', {
+type: 'geojson',
+//Use a URL for the value for the data property.
+data: 'data/-7162369445271272240navigable-waterways-fixed.geojson'
+});
+
+map.addLayer({
+'id': '-7162369445271272240navigable-waterways-fixed',
+'type': 'line',
+'source': '-7162369445271272240navigable-waterways-fixed',
+'paint': {
+  'line-color': 'LimeGreen',
 }
 });
 })
 
-
-map.on ('load', function () {
-map.addSource('navigable-waterway-lines', {
-type: 'geojson',
-//Use a URL for the value for the data property.
-data: 'data/navigable-waterway-lines.geojson'
-});
-
-map.addLayer({
-'id': 'navigable-waterway-lines',
-'type': 'line',
-'source': 'navigable-waterway-lines',
-'paint': {
-  'line-color': 'darkblue',
+map.on ('load', function (){
+map.addSource('major_ports',{
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Chester Port</p>'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-75.322199999738501, 39.854230000206684]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Buffalo Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-78.909476000143357, 42.937633000232054]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Fort Smith Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-94.385441999658141, 35.44520200009255]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Little Rock Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-92.358281000340696, 34.790791000257002]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Morgan City Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-91.280491000179737, 29.420290000226256]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Sacramento Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-122.399041999779854, 37.806664999659269]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>San Juan Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.099890000077295, 18.442329000185815]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Ponce Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.620996000352903, 17.978613000085073]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Sears Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-68.924969999625802, 44.452849999920929]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Portland Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-70.251339999594563, 43.649509999762756]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Portsmouth Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-70.738059999963767, 43.073979999770472]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Albany Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.74815999963289, 42.642709999942802]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Providence Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-71.398439999693721, 41.811780000039576]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>New Haven Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-72.904729999810499, 41.298829999841828]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Port Jefferson</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.072160000317893, 40.948810000222728]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Bridgeport</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.178859999710255, 41.172000000328872]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Camden-Gloucester Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-75.104320000223922, 39.943050000051358]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Paulsboro Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-75.22654999968799, 39.826890000156126]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Macus Hook Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-75.404240000415115, 39.81543999992801]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Conneaut Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-80.548599999900503, 41.966710000262147]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Stoneport</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-83.420781000025244, 45.298455000191495]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Calcite Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [ -83.7755999999913, 45.392930000182211]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Alpena Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [ -83.422269999829481, 45.055600000025002]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>St Clair Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-82.494129999693556, 42.826630000097147]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Detroit Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-83.109586000361318, 42.269094000260175]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Wilmington Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-75.506969999613872, 39.715889999656902]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>New Castle Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-75.561579999683744, 39.656680000110903]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Baltimore Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-76.517120000289182, 39.208990000340613]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Virginia Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-76.311739999562647, 36.866420000120833]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Morehead Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-76.724209999854594, 34.716929999991791]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Wilmington NC Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-77.953953999979603, 34.239278000103141]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Wilmington NC Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-77.953953999979603, 34.239278000103141]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Pittsburgh Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-80.016120000417956, 40.442340000286514]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Ashtabula Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-80.791719999885586, 41.918730000172815]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Panama City Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [ -84.199260000265483, 30.190090000216639]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Jacksonville Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [ -81.665125000278167, 30.322756999810611]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Chicago Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-87.637989999586765, 41.886620000123123]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Louisville Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-85.760993000130256, 38.26147000010436 ]
 
 }
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Milwaukee Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-87.899670000028891, 42.988240000004311]
+
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Tulsa Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-95.740019999660191, 36.218200000003336 ]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Memphis Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-90.061979999694685, 35.181769999752454 ]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Cleveland Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-81.67190999987362, 41.478519999935159]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Savannah Port</p>',
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-81.095381999766403, 32.084711000216075]
+
+}
+}
+]
+}
+});
+
+// Add a layer showing the places.
+map.addLayer({
+'id': 'major_ports',
+'type': 'circle',
+'source': 'major_ports',
+'paint': {
+'circle-color': '#FF1493',
+'circle-radius': 12,
+'circle-stroke-width': 2,
+'circle-stroke-color': '#ffffff'
+}
+});
+
+// Create a popup, but don't add it to the map yet.
+const popup = new mapboxgl.Popup({
+closeButton: false,
+closeOnClick: false
+});
+
+map.on('mouseenter', 'major_ports', (e) => {
+// Change the cursor style as a UI indicator.
+map.getCanvas().style.cursor = 'pointer';
+
+// Copy coordinates array.
+const coordinates = e.features[0].geometry.coordinates.slice();
+const description = e.features[0].properties.description;
+
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+}
+
+// Populate the popup and set its coordinates
+// based on the feature found.
+popup.setLngLat(coordinates).setHTML(description).addTo(map);
+});
+
+map.on('mouseleave', 'major_ports', () => {
+map.getCanvas().style.cursor = '';
+popup.remove();
 });
 })
